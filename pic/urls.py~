@@ -1,0 +1,22 @@
+from django.conf.urls import patterns, url, static
+from django.conf import settings
+
+from pic import views
+
+urlpatterns = patterns('',
+  url(r'^uploadfile/$', views.uploadpic, name='uploadpic')
+  url(r'^listfiles/$', views.displaypic, name='displaypic')
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        }),
+)
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'pic/base.html' %}
+{% load staticfiles %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'pic/style.css' %}" />
+
+
+{% block Main %}
+<section class="desc">
+<p>Picture Gallery</p>
+</section>
+
+
+{% for name in names %}
+<img id='pics' src="{{ MEDIA_URL }}{{ name }}" scale="0.7"/>
+{% endfor %}
+
+
+<section class="desc" id="links">
+<p>Start over!</p>
+<a href="{% url 'pic:uploadpic' %}">Upload a new picture!</a>
+</section>
+{% endblock %}

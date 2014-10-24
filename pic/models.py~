@@ -1,0 +1,11 @@
+import datetime
+
+from django.db import models
+from django.utils import timezone
+
+def formatName(uploadedfile, filename):
+  return "pic/%s"
+
+# Create your models here.
+class UploadPic(models.Model):
+  file = models.FileField(upload_to=formatName)

@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Django Photo App</title>
+      <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="{% static 'pic/style.css' %}" />
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+   <head>
+   
+   <body>
+      
+      <header id="title">
+         <p>UPLOAD YOUR PICTURES</p>
+      </header>
+      
+      {% block Main %}
+      {% endblock %}
+      
+      
+      <footer id="myname">
+         <div id="centered">
+         <p> © Sangeeta Jadoonanan</p>
+         </div>
+      </footer>
+   </body>
+</html>
